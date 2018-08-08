@@ -1,7 +1,7 @@
-import {Component} from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
+import { Component } from '@angular/core';
 
-import {jsonRequestHeaders} from './httpUtils';
+import { jsonRequestHeaders } from './httpUtils';
 
 interface ISwapiStarShipResponse {
   results: { name: string }[];
@@ -26,7 +26,7 @@ export class StarshipListComponent {
   constructor(http: HttpClient) {
     // If you are using HTTP in this trivial one-shot way, it is
     // reasonable to convert to a Promise, if you prefer:
-    http.get<ISwapiStarShipResponse>('https://swapi.co/api/starships/', {headers: jsonRequestHeaders})
+    http.get<ISwapiStarShipResponse>('https://swapi.co/api/starships/', { headers: jsonRequestHeaders })
       .toPromise(Promise)   // Caveat - no way to unsubcribe the Observable.
       .then((data: ISwapiStarShipResponse) => {
         console.log(data);

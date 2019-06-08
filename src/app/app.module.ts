@@ -9,4 +9,4 @@ import { StarshipListComponent } from './starshipList';
   imports: [BrowserModule, HttpClientModule],
   bootstrap: [StarshipListComponent]
 })
-export class AppModule { }
+export class AppModule {}

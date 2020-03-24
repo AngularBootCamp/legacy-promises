@@ -32,14 +32,14 @@ export class StarshipListComponent {
         { headers: jsonRequestHeaders }
       )
       .toPromise(Promise) // Caveat - no way to unsubcribe the Observable.
-      .then((data: ISwapiStarShipResponse) => {
-        console.log(data);
+      .then((response: ISwapiStarShipResponse) => {
+        console.log(response);
         // throw ('broke on purpose');
-        return data;
+        return response;
       })
       .then(
-        (data: ISwapiStarShipResponse) =>
-          (this.starships = data.results)
+        (response: ISwapiStarShipResponse) =>
+          (this.starships = response.results)
       )
       .catch(console.error);
   }

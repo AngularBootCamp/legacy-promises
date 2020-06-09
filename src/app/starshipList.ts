@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
 import { jsonRequestHeaders } from './httpUtils';
 
 interface ISwapiStarShipResponse {
-  results: Array<{ name: string }>;
+  results: { name: string }[];
 }
 
 // This special jsonRequestHeaders setting is needed with Firefox,
@@ -20,7 +20,7 @@ interface ISwapiStarShipResponse {
   `
 })
 export class StarshipListComponent {
-  starships: Array<{ name: string }> = [];
+  starships: { name: string }[] = [];
   // Note that index.html changed to include http
 
   constructor(http: HttpClient) {

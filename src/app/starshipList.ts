@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { firstValueFrom } from 'rxjs';
 
 import { jsonRequestHeaders } from './httpUtils';
 
@@ -26,12 +27,12 @@ export class StarshipListComponent {
   constructor(http: HttpClient) {
     // If you are using HTTP in this trivial one-shot way, it is
     // reasonable to convert to a Promise, if you prefer:
-    http
-      .get<ISwapiStarShipResponse>(
+    firstValueFrom(
+      http.get<ISwapiStarShipResponse>(
         'https://swapi.co/api/starships/',
         { headers: jsonRequestHeaders }
       )
-      .toPromise(Promise) // Caveat - no way to unsubcribe the Observable.
+    )
       .then((response: ISwapiStarShipResponse) => {
         console.log(response);
         // throw ('broke on purpose');

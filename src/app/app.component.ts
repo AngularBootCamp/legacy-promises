@@ -20,7 +20,7 @@ interface ISwapiStarShipResponse {
     </ul>
   `
 })
-export class StarshipListComponent {
+export class AppComponent {
   starships: { name: string }[] = [];
   // Note that index.html changed to include http
 
@@ -29,7 +29,7 @@ export class StarshipListComponent {
     // reasonable to convert to a Promise, if you prefer:
     firstValueFrom(
       http.get<ISwapiStarShipResponse>(
-        'https://swapi.co/api/starships/',
+        'https://swapi.dev/api/starships/',
         { headers: jsonRequestHeaders }
       )
     )

@@ -2,11 +2,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { StarshipListComponent } from './starshipList';
+import { AppComponent } from './app.component';
 
 @NgModule({
-  declarations: [StarshipListComponent],
+  declarations: [AppComponent],
   imports: [BrowserModule, HttpClientModule],
-  bootstrap: [StarshipListComponent]
+  bootstrap: [AppComponent]
 })
 export class AppModule {}

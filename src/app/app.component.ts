@@ -29,7 +29,7 @@ export class AppComponent {
     // reasonable to convert to a Promise, if you prefer:
     firstValueFrom(
       http.get<ISwapiStarShipResponse>(
-        'https://swapi.dev/api/starships/',
+        'https://swapi.devhttps://api.angularbootcamp.com/starships/',
         { headers: jsonRequestHeaders }
       )
     )

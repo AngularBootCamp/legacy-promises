@@ -1,3 +1,4 @@
+import { NgFor } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { firstValueFrom } from 'rxjs';
@@ -18,7 +19,9 @@ interface ISwapiStarShipResponse {
     <ul>
       <li *ngFor="let s of starships">{{ s.name }}</li>
     </ul>
-  `
+  `,
+  standalone: true,
+  imports: [NgFor]
 })
 export class AppComponent {
   starships: { name: string }[] = [];
